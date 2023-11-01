@@ -12,7 +12,7 @@ const Blog = sequelize.define('Blog', {
   },
   date: {
     type: DataTypes.DATE,
-    defaultValue: DataTypes.NOW, // Set the default value to the current date and time
+    defaultValue: DataTypes.NOW, 
     allowNull: false,
   },
 });

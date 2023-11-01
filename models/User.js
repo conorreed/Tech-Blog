@@ -14,12 +14,10 @@ const User = sequelize.define('User', {
   },
 });
 
-// Hash user password before saving to the database
 User.beforeCreate(async (user) => {
   user.password = await bcrypt.hash(user.password, 10);
 });
 
-// Check if the provided password matches the hashed password
 User.prototype.validPassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
