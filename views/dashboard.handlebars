@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - My CMS Blog</title>
+</head>
+<body>
+    {{> header}}
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <h2>Your Blog Posts:</h2>
+        {{#each userPosts}}
+            <div class="user-blog-post">
+                <h3>{{this.title}}</h3>
+                <p>{{this.date}}</p>
+                <p>{{this.content}}</p>
+                <a href="/blog/edit/{{this.id}}">Edit</a>
+                <a href="/blog/delete/{{this.id}}">Delete</a>
+            </div>
+        {{/each}}
+        <a href="/blog/create">Create New Blog Post</a>
+    </div>
+    {{> footer}}
+</body>
+</html>
