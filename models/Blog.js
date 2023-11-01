@@ -10,7 +10,11 @@ const Blog = sequelize.define('Blog', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  // Add more fields as needed, such as 'userId' for associating blogs with users.
+  date: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW, // Set the default value to the current date and time
+    allowNull: false,
+  },
 });
 
 module.exports = Blog;
